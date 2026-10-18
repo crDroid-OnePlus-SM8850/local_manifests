@@ -1,0 +1,38 @@
+<manifest>
+  <remote name="los" fetch="https://github.com/LineageOS" revision="lineage-24.0" />
+  <remote name="crdroid-op" fetch="https://github.com/crDroid-OnePlus-SM8850" revision="lineage-24.0" />
+
+  <include name="manifests/snippets/kernel-6.12.xml" />
+
+  <!-- crDroid apps: replace with our forks -->
+  <remove-project name="crdroidandroid/android_packages_apps_Settings" />
+  <remove-project name="crdroidandroid/android_packages_apps_crDroidSettings" />
+  <remove-project name="crdroidandroid/android_packages_apps_Updater" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="crdroid-op" revision="17.0" groups="pdk-cw-tvc,pdk-fs,sysui-studio" />
+  <project path="packages/apps/crDroidSettings" name="android_packages_apps_crDroidSettings" remote="crdroid-op" revision="17.0" />
+  <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="crdroid-op" revision="17.0" />
+
+  <!-- common -->
+  <project path="device/oneplus/sm8850-common" name="android_device_oneplus_sm8850-common" remote="crdroid-op" />
+  <project path="hardware/oplus" name="android_hardware_oplus" remote="crdroid-op" />
+  <project path="kernel/platform/kernel-6.12/vendor/oneplus/sm8850" name="android_kernel_oneplus_sm8850" remote="los" />
+  <project path="kernel/platform/kernel-6.12/vendor/oneplus/sm8850-devicetrees" name="android_kernel_oneplus_sm8850-devicetrees" remote="los" />
+  <project path="kernel/platform/kernel-6.12/vendor/oneplus/sm8850-modules" name="android_kernel_oneplus_sm8850-modules" remote="los" />
+  <project path="vendor/oneplus/sm8850-common" name="proprietary_vendor_oneplus_sm8850-common" remote="crdroid-op" />
+
+  <!-- infiniti (OnePlus 15) -->
+  <project path="device/oneplus/infiniti" name="android_device_oneplus_infiniti" remote="crdroid-op" />
+  <project path="vendor/oneplus/infiniti" name="proprietary_vendor_oneplus_infiniti" remote="crdroid-op" />
+
+  <!-- fairlady (OnePlus 15T) -->
+  <project path="device/oneplus/fairlady" name="android_device_oneplus_fairlady" remote="crdroid-op" />
+  <project path="vendor/oneplus/fairlady" name="proprietary_vendor_oneplus_fairlady" remote="crdroid-op" />
+
+  <!-- macan (OnePlus 15R) -->
+  <project path="device/oneplus/macan" name="android_device_oneplus_macan" remote="crdroid-op" />
+  <project path="vendor/oneplus/macan" name="proprietary_vendor_oneplus_macan" remote="crdroid-op" />
+
+  <!-- macanc (OnePlus Ace 6T) -->
+  <project path="device/oneplus/macanc" name="android_device_oneplus_macanc" remote="crdroid-op" />
+  <project path="vendor/oneplus/macanc" name="proprietary_vendor_oneplus_macanc" remote="crdroid-op" />
+</manifest>
